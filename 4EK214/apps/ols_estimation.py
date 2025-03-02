@@ -1,3 +1,17 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "altair==5.5.0",
+#     "marimo",
+#     "numpy==2.2.3",
+#     "pandas==2.2.3",
+#     "polars==1.22.0",
+#     "scipy==1.15.2",
+# ]
+# [tool.marimo.display]
+# theme = "dark"
+# ///
+
 import marimo
 
 __generated_with = "0.11.5"

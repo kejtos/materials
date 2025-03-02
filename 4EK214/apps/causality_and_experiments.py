@@ -116,11 +116,13 @@ def _(chart, mo):
 
     #### Spurious correlation or regression
 
-    Random correlations occur all over the place. For instance, you can find strong correlation between bachelor's degrees awarded in precision production and the number of parking enforcement workers in New Jersey. You can find many other examples [here](https://www.tylervigen.com/spurious-correlations).
+    Random correlations occur all over the place. For instance, you can find strong correlation between bachelor's degrees awarded in precision production and the number of parking enforcement workers in New Jersey.
 
     {chart}
 
-    Similarly, you can find strong correlations between seasonal or trending variables. Last, _If you torture the data long enough, it will confess to anything._
+    You can find many other examples [here](https://www.tylervigen.com/spurious-correlations).
+
+    Similarly, you can find strong correlations between seasonal or trending variables. Last, you can find strong correlations between variablers if you try to transform them in various ways, or as the saying goes: _If you torture the data long enough, it will confess to anything._
 
     #### Causal Schemes
 
@@ -128,7 +130,7 @@ def _(chart, mo):
 
     1. \\( x \\rightarrow y \\), in other words $x$ causes $y$
     2. \\( y \\rightarrow x \\), in other words $y$ causes $x$
-    3. \\( x \\leftarrow z \\rightarrow y \\), in other words $z$ cause both $x$ and $y$.
+    3. \\( x \\leftarrow z \\rightarrow y \\), in other words $z$ causes both $x$ and $y$.
 
     Few examples of the possible relationships:
     """

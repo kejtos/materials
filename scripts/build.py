@@ -68,6 +68,7 @@ def generate_index(notebooks: dict[List[str]], output_dir: str) -> None:
             for notebook in notebooks['4EK214']:
                 notebook_name = notebook.split("/")[-1].replace(".py", "")
                 display_name = notebook_name.replace("_", " ").title()
+                print(display_name)
 
                 f.write(
                     f'      <div class="p-4 border border-gray-200 rounded-lg max-w-xs justify-self-start">\n'
@@ -124,7 +125,7 @@ def export_course(course, dir):
         return
 
     for nb in all_notebooks:
-        export_html_wasm(nb, dir, as_app='apps' in nb and not nb.split('\\')[-1].startswith('_'))
+        export_html_wasm(nb, dir, as_app='apps' in nb)
 
     return all_notebooks
 
