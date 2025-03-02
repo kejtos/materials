@@ -5,7 +5,7 @@
 #     "marimo",
 #     "numpy==2.2.3",
 #     "pandas==2.2.3",
-#     "polars==1.22.0",
+#     "polars==1.23.0",
 #     "scipy==1.15.2",
 # ]
 # [tool.marimo.display]
@@ -16,6 +16,22 @@ import marimo
 
 __generated_with = "0.11.5"
 app = marimo.App(width="medium")
+
+
+@app.cell
+def _(mo):
+    main_menu = mo.Html(
+        f'<a href="https://kejtos.github.io/materials/" target="_parent" '
+        f'style="display: inline-block; border: 1px solid #ccc; border-radius: 8px; padding: 4px 8px; font-size: 11px;">'
+        f'{mo.icon("carbon:return")} Back to the menu</a>'
+    )
+    return (main_menu,)
+
+
+@app.cell
+def _(main_menu):
+    main_menu.right()
+    return
 
 
 @app.cell
@@ -268,6 +284,22 @@ def _(mo):
         $$
         """
     )
+    return
+
+
+@app.cell
+def _(mo):
+    mein_menu2 = mo.Html(
+        f'<a href="https://kejtos.github.io/marimo_test/" target="_parent" '
+        f'style="display: inline-block; border: 1px solid #ccc; border-radius: 8px; padding: 4px 8px; font-size: 11px;">'
+        f'{mo.icon("carbon:return")} Back to the menu</a>'
+    )
+    return (mein_menu2,)
+
+
+@app.cell
+def _(mein_menu2):
+    mein_menu2.right()
     return
 
 
