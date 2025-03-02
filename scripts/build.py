@@ -59,7 +59,7 @@ def generate_index(notebooks: dict[List[str]], output_dir: str) -> None:
   </head>
   <body class="font-sans max-w-4xl mx-auto p-8 leading-relaxed">
     <div class="mb-8">
-        <p class="text-sm text-gray-600">All the scripts and apps should run in your browser. Therefore you should not need anything else, however, some of them might take a few seconds to run, especially if you have got a slow PC.</p>
+        <p class="text-sm text-gray-600">All the scripts and apps should run in your browser. However, as a result, some of them might take a few seconds to run, especially if you have got a slow PC.</p>
     </div>
     <div class="grid grid-cols-2 gap-4">
       <div class="flex flex-col">
