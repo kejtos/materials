@@ -11,7 +11,10 @@
 import marimo
 
 __generated_with = "0.11.5"
-app = marimo.App(width="medium", layout_file="layouts/testos.grid.json")
+app = marimo.App(
+    width="medium",
+    layout_file="layouts/changing_samples.grid.json",
+)
 
 
 @app.cell
@@ -31,6 +34,22 @@ def _(mo):
 @app.cell
 def _(n_slider):
     n_slider
+    return
+
+
+@app.cell
+def _(mo):
+    main_menu = mo.Html(
+        f'<a href="https://kejtos.github.io/materials/" target="_parent" '
+        f'style="display: inline-block; border: 1px solid #ccc; border-radius: 8px; padding: 4px 8px; font-size: 11px;">'
+        f'{mo.icon("carbon:return")} Back to the menu</a>'
+    )
+    return (main_menu,)
+
+
+@app.cell
+def _(main_menu):
+    main_menu.right()
     return
 
 
@@ -93,9 +112,9 @@ def _(alt, mo, np, pl, sample_button):
 
     def subset_regression(df, n, color):
         df_subset = df.sample(n)
-        
+
         intercept, slope = ols_regression(df_subset)
-        
+
         line_df = create_line_df(df_subset, intercept, slope)
 
         points = alt.Chart(df_subset).mark_point(size=20, filled=True).encode(
@@ -111,8 +130,8 @@ def _(alt, mo, np, pl, sample_button):
             y='y',
             color=alt.value(color),
         )
-
-        eq = mo.md(f"$$ \\widehat{{\\text{{y}}}} = {intercept:.2f}{slope:+.2f} \\text{{x}} $$")
+        
+        eq = mo.md(f"\\( \\widehat{{\\text{{y}}}} = {intercept:.2f}{slope:+.2f} \\text{{x}} \\)")
 
         return points, line, eq
     return create_line_df, df, ols_regression, subset_regression
@@ -184,8 +203,7 @@ def _(final_chart):
 
 
 @app.cell
-def _(colors, sample_table, samples):
-    samples[colors[0]][3].value
+def _(sample_table):
     sample_table
     return
 
@@ -194,6 +212,19 @@ def _(colors, sample_table, samples):
 def _(run_button):
     run_button
     return
+
+
+@app.cell
+def _(colors, mo, run_button, samples):
+    run_button.value
+    html_str = "<div style='text-align: left;'>\n"
+    for _color in colors:
+        if samples[_color][4].value:
+            html_str += f'<span style="color: {_color};">{samples[_color][2]}</span>\n'
+    html_str += "</div>"
+
+    mo.Html(html_str)
+    return (html_str,)
 
 
 @app.cell
