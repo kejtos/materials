@@ -299,11 +299,6 @@ def _(mo):
 
 
 @app.cell
-def _():
-    return
-
-
-@app.cell
 def _(mein_menu2):
     mein_menu2.right()
     return
