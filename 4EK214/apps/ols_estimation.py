@@ -7,6 +7,7 @@
 #     "pandas==2.2.3",
 #     "polars==1.23.0",
 #     "scipy==1.15.2",
+#     "statsmodels==0.14.4",
 # ]
 # [tool.marimo.display]
 # theme = "dark"
@@ -298,6 +299,11 @@ def _(mo):
 
 
 @app.cell
+def _():
+    return
+
+
+@app.cell
 def _(mein_menu2):
     mein_menu2.right()
     return
@@ -308,7 +314,8 @@ def _():
     import altair as alt
     import polars as pl
     import numpy as np
-    return alt, np, pl
+    import statsmodels.api as sm
+    return alt, np, pl, sm
 
 
 @app.cell
