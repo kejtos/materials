@@ -6,6 +6,8 @@
 #     "numpy==2.2.3",
 #     "polars==1.24.0",
 # ]
+# [tool.marimo.display]
+# theme = "dark"
 # ///
 
 import marimo
@@ -99,7 +101,7 @@ def _(alt, create_line_df, df, mo, ols_regression, run_button):
         strokeWidth=alt.value(1),
     )
 
-    line = alt.Chart(_line_df).mark_line(size=2).encode(
+    line = alt.Chart(_line_df).mark_line(size=3).encode(
         x='x',
         y='y',
         color=alt.value('#56B4E9'),

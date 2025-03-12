@@ -6,6 +6,8 @@
 #     "numpy==2.2.3",
 #     "polars==1.24.0",
 # ]
+# [tool.marimo.display]
+# theme = "dark"
 # ///
 
 import marimo
