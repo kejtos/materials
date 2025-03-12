@@ -35,7 +35,7 @@ def _(mo):
         RSS = \sum_{i=1}^{n} \bigl(y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i)\bigr)^2
         \]
 
-        For RSS to be at the \(\displaystyle \min_{\hat{\beta}_0, \hat{\beta}_1}\{\text{RSS}\} \), the derivative of RSS with respect to \(\hat{\beta}_0\) and \(\hat{\beta}_1\) has to be both be 0, that is
+        For RSS to be at the \(\displaystyle \min_{\hat{\beta}_0, \hat{\beta}_1}\{\text{RSS}\} \), both derivatives of RSS with respect to \(\hat{\beta}_0\) and \(\hat{\beta}_1\) have to be 0. In the case of \(\hat{\beta}_0\):
 
         \[
         \begin{align*}
