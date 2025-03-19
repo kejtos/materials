@@ -341,5 +341,121 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        ---
+        # Why the estimate of variance we gets divided by n-1
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Let's define the sample mean
+
+        \[
+        \bar X = \frac{1}{n}\sum_{i=1}^n X_i.
+        \]
+
+        Since \(\bar X\) is an **estimate** of \(\mu\), we can look at the total sum of squares
+
+        \[
+        \sum_{i=1}^n (X_i - \bar X)^2 
+        = \sum_{i=1}^n (X_i - \mu)^2 - n(\bar X - \mu)^2.
+        \]
+
+        Since variance is the expacted value of the total sum of squares, we get
+
+        \[
+        \begin{align*}
+        \mathbb{E}\!\Big[\sum_{i=1}^n (X_i - \bar X)^2\Big] &= \sum_{i=1}^n \mathbb{E}[(X_i - \mu)^2] - n\,\mathrm{Var}(\bar X) \\
+        &= n\sigma^2 - n\frac{\sigma^2}{n} \\
+        &= (n-1)\sigma^2 \\
+        \end{align*}
+        \]
+
+        Therefore, an unbiased estimator of \(\sigma^2\) is
+
+        \[
+        \hat\sigma^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i - \bar X)^2,
+        \]
+
+        because
+
+        \[
+        \mathbb{E}[\hat\sigma^2] = \sigma^2.
+        \]
+        ---
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""<!-- # Why the estimate of variance we gets divided by n-k -->""")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        r"""
+        <!-- Consider a linear model
+
+        \[
+        Y_i = \beta_0 + \beta_1 X_{i1} + \cdots + \beta_{p-1} X_{i,p-1} + \varepsilon_i,\quad \varepsilon_i\sim(0,\sigma^2).
+        \]
+
+        Define the total sum of squares about the mean:
+
+        \[
+        \mathrm{SST} 
+        = \sum_{i=1}^n (Y_i - \bar Y)^2.
+        \]
+
+        After fitting by ordinary least squares, decompose SST into the regression sum of squares (SSR) and residual sum of squares (RSS):
+
+        \[
+        \mathrm{SST} = \mathrm{SSR} + \mathrm{RSS}.
+        \]
+
+        Taking expectations:
+
+        \[
+        \mathbb{E}[\mathrm{SST}] 
+        = (n-1)\,\sigma^2 + \beta^\top X^\top X\,\beta,
+        \]
+
+        \[
+        \mathbb{E}[\mathrm{SSR}]
+        = (p-1)\,\sigma^2 + \beta^\top X^\top X\,\beta.
+        \]
+
+        Subtracting gives
+
+        \[
+        \mathbb{E}[\mathrm{RSS}]
+        = \mathbb{E}[\mathrm{SST}] - \mathbb{E}[\mathrm{SSR}]
+        = (n-1)\sigma^2 - (p-1)\sigma^2
+        = (n-p)\,\sigma^2.
+        \]
+
+        Thus the unbiased estimator of the error variance is
+
+        \[
+        \hat\sigma^2 = \frac{\mathrm{RSS}}{n-p}
+        \]
+        --- -->
+        """
+    )
+    return
+
+
 if __name__ == "__main__":
     app.run()
