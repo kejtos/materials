@@ -14,7 +14,10 @@
 import marimo
 
 __generated_with = "0.11.5"
-app = marimo.App(width="medium", layout_file="layouts/p_value.grid.json")
+app = marimo.App(
+    width="medium",
+    layout_file="layouts/multiple_testing.grid.json",
+)
 
 
 @app.cell(hide_code=True)
@@ -37,6 +40,12 @@ def _():
     import altair as alt
     from scipy.stats import t
     return alt, inv, np, pl, t
+
+
+@app.cell
+def _(alt):
+    _ = alt.theme.enable('dark')
+    return
 
 
 @app.cell
