@@ -3,8 +3,8 @@
 # dependencies = [
 #     "altair==5.5.0",
 #     "marimo",
-#     "numpy==2.2.3",
-#     "polars==1.24.0",
+#     "numpy==2.2.4",
+#     "polars==1.26.0",
 # ]
 # [tool.marimo.display]
 # theme = "dark"

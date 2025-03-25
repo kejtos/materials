@@ -346,7 +346,7 @@ def _(mo):
     mo.md(
         r"""
         ---
-        # Why the estimate of variance we gets divided by n-1
+        # Why there is n-1 in the estimate of variance
         """
     )
     return
@@ -398,7 +398,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""<!-- # Why the estimate of variance we gets divided by n-k -->""")
+    mo.md(r"""<!-- # Why there is n-k in the estimate of variance*** -->""")
     return
 
 

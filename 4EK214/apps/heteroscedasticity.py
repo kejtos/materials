@@ -3,7 +3,7 @@
 # dependencies = [
 #     "marimo",
 #     "altair==5.5.0",
-#     "numpy==2.2.3",
+#     "numpy==2.2.4",
 #     "pandas==2.2.3",
 #     "scipy==1.15.2",
 #     "statsmodels==0.14.4",
