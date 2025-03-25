@@ -9,6 +9,8 @@
 #     "scipy==1.15.2",
 #     "statsmodels==0.14.4",
 # ]
+# [tool.marimo.display]
+# theme = "dark"
 # ///
 
 import marimo
