@@ -19,6 +19,22 @@ def _():
     return (mo,)
 
 
+@app.cell
+def _(mo):
+    main_menu = mo.Html(
+        f'<a href="https://kejtos.github.io/materials/" target="_parent" '
+        f'style="display: inline-block; border: 1px solid #ccc; border-radius: 8px; padding: 4px 8px; font-size: 11px;">'
+        f'{mo.icon("carbon:return")} Back to the menu</a>'
+    )
+    return (main_menu,)
+
+
+@app.cell
+def _(main_menu):
+    main_menu.right()
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(
@@ -454,6 +470,21 @@ def _(mo):
         --- -->
         """
     )
+    return
+
+@app.cell
+def _(mo):
+    mein_menu2 = mo.Html(
+        f'<a href="https://kejtos.github.io/marimo_test/" target="_parent" '
+        f'style="display: inline-block; border: 1px solid #ccc; border-radius: 8px; padding: 4px 8px; font-size: 11px;">'
+        f'{mo.icon("carbon:return")} Back to the menu</a>'
+    )
+    return (mein_menu2,)
+
+
+@app.cell
+def _(mein_menu2):
+    mein_menu2.right()
     return
 
 
