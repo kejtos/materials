@@ -63,9 +63,9 @@ def generate_index(notebooks: dict[List[str]], output_dir: str) -> None:
     </div>
     <div class="grid grid-cols-2 gap-4">
       <div class="flex flex-col">
-        <h2 class="text-xl font-bold mb-4">4EK214</h2>"""
+        <h2 class="text-xl font-bold mb-4">Econometrics</h2>"""
             )
-            for notebook in notebooks['4EK214']:
+            for notebook in notebooks['econometrics']:
                 notebook_name = notebook.split("/")[-1].replace(".py", "")
                 display_name = notebook_name.replace("_", " ").title()
                 print(display_name)
@@ -81,10 +81,10 @@ def generate_index(notebooks: dict[List[str]], output_dir: str) -> None:
             f.write(
       """</div>
       <div class="flex flex-col">
-        <h2 class="text-xl font-bold mb-4">4EK602</h2>"""
+        <h2 class="text-xl font-bold mb-4">Game theory</h2>"""
             )
 
-            for notebook in notebooks['4EK602']:
+            for notebook in notebooks['game_theory']:
                 notebook_name = notebook.split("/")[-1].replace(".py", "")
                 display_name = notebook_name.replace("_", " ").title()
 
@@ -137,7 +137,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    courses = ['4EK214', '4EK602']
+    courses = ['econometrics', 'game_theory']
     notebooks = {}
     for course in courses:
         notebooks[course] = export_course(course=course, dir=args.output_dir)
