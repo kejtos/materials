@@ -266,6 +266,5 @@ def _(final_altair_chart):
     final_altair_chart
     return
 
-
 if __name__ == "__main__":
     app.run()
